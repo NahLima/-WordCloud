@@ -16,4 +16,11 @@ id video = iM-Kfuf0_H0
 - Depois executar o código
 - Olhar a planilha que vc tinha colado o id 
 
-\0/
+tutorial : https://www.youtube.com/watch?v=uD58-EHwaeI
+
+
+nuvem de palavras = https://carolinescholles.com/br/nuvem-de-palavras-em-python/
+                    https://www.youtube.com/watch?v=zsACB0QhMVc
+                    https://ichi.pro/pt/gerar-nuvens-de-palavras-significativas-em-python-100630905917163
+
+                    
