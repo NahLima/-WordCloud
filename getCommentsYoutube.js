@@ -1,14 +1,14 @@
 function scrapeCommentsWithoutReplies(){
-    var ss = SpreadsheetApp.getActiveSpreadsheet()
-    var result = [['Name', 'Comment', 'Time', 'Likes', 'Reply Count']]
-    var vid = ss.getSheets()[0].getRange(1, 1).getValue()
-    var nextPageToken = undefined
+    let ss = SpreadsheetApp.getActiveSpreadsheet()
+    let result = [['Name', 'Comment', 'Time', 'Likes', 'Reply Count']]
+    let vid = ss.getSheets()[0].getRange(1, 1).getValue()
+    let nextPageToken = undefined
 
     while(1){
-        var data = YouTube.CommentThreads.list('snippet', {videoId: vid, maxResults: 100, pageToken: nextPageToken})
+        let data = YouTube.CommentThreads.list('snippet', {videoId: vid, maxResults: 100, pageToken: nextPageToken})
         nextPageToken = data.nextPageToken
         // console.log(nextPageToken)
-        for (var row=0
+        for (let row=0
              row < data.items.length
              row++) {
             result.push([data.items[row].snippet.topLevelComment.snippet.authorDisplayName,
@@ -21,7 +21,7 @@ function scrapeCommentsWithoutReplies(){
             break
         }
     }
-    var newSheet = ss.insertSheet(ss.getNumSheets())
+    let newSheet = ss.insertSheet(ss.getNumSheets())
     newSheet.getRange(1, 1, result.length, 5).setValues(result)
 
 }
